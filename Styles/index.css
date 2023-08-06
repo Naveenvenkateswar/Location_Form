@@ -1,0 +1,155 @@
+.LoactMainContainer,
+body {
+  overflow: hidden;
+  background-color: #cee2f7;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+.LocatSubContainer {
+  background-color: #ffffff;
+  width: 35%;
+  margin: 5% 32.5%;
+  border-radius: 5px;
+  border: 1px solid #999999;
+  display: flex;
+  flex-direction: column;
+  padding: 1% 0 2% 0;
+}
+.LocatSubContainer div {
+  padding: 2%;
+}
+.LocatSubContainer div:nth-child(odd) {
+  padding: 2% 2% 0.5% 10%;
+  font-weight: 600;
+}
+.LocatSubContainer div:nth-child(even) {
+  padding: 2% 0% 0.5% 10%;
+}
+.DdlEmement,
+.TxtElement {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid #999999;
+  outline: none;
+  border-radius: 10px;
+  color: #666666;
+}
+.DdlEmement {
+  width: 75%;
+}
+.DdlEmement:focus,
+.TxtElement:focus {
+  border: 2px solid #4889d8;
+  outline: #4889d8;
+}
+.SubmitButn {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #005f82;
+  padding: 6px 25px;
+  border: 2px solid #005f82;
+  font-weight: 600;
+  color: #ffffff;
+  align-self: center;
+}
+
+.ErrorMesg {
+  color: red;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.CallbackMaskContainer {
+  position: fixed;
+  font-family: sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0.1;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  font-size: 23px;
+  color: #005f82;
+  opacity: 5;
+  pointer-events: auto;
+}
+
+#MaskPanel_Container {
+  position: fixed;
+  width: 33%;
+  margin: 5% 32.5%;
+  background-color: #ffffff;
+  padding: 0px 20px 13px 27px;
+  text-align: left;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+#MaskPanel_Container div {
+  width: 80%;
+  margin: 5% 10% 0 10%;
+}
+.MaskTxt,
+#MaskSubmitbutn {
+  width: 90%;
+  padding: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid #b3cebb;
+  outline: none;
+  border-radius: 10px;
+  color: #666666;
+}
+#MaskSubmitbutn {
+  width: 98% !important;
+  color: #ffffff;
+  margin-bottom: 10%;
+}
+.MaskContainer_Close {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  align-self: self-end;
+  width: 15px;
+}
+.MaskContainer_Close:hover {
+  color: #232323;
+}
+#AddButn {
+  padding: 10px !important;
+  border-radius: 5px;
+}
+.LocatSubContainer div:last-child {
+  margin-left: 2%;
+  padding-left: 2%;
+}
+@media only screen and (max-width: 600px) {
+  .LocatSubContainer,
+  #MaskPanel_Container {
+    width: 90%;
+    margin: 5%;
+  }
+  #MaskPanel_Container {
+    padding: 0;
+  }
+  #MaskPanel_Container div {
+    margin-top: 8%;
+  }
+  body {
+    margin: 0;
+  }
+}

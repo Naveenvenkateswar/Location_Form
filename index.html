@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Styles/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- <form action=""> -->
+    <div class="LoactMainContainer">
+      <div class="LocatSubContainer">
+        <div>Place</div>
+        <div>
+          <select name="LocationDDL" id="LocationDDL" class="DdlEmement">
+            <option value="0">Select</option>
+          </select>
+          <input
+            type="button"
+            value="Add"
+            id="AddButn"
+            onclick="AddButnClick()"
+            class="SubmitButn"
+          /><br />
+          <label id="Locationcheck" class="ErrorMesg" style="display: none">
+            **please Select the Place
+          </label>
+        </div>
+        <div>Group</div>
+        <div>
+          <select name="GrupDDL" id="GrupDDL" class="DdlEmement">
+            <option value="0">Select</option>
+          </select>
+          <br />
+          <label id="Grupcheck" class="ErrorMesg" style="display: none">
+            **please Select the Grup
+          </label>
+        </div>
+        <div>Name</div>
+        <div>
+          <input
+            type="text"
+            id="NameText"
+            maxlength="50"
+            placeholder="Enter Name"
+            class="TxtElement"
+          /><br />
+          <label id="usercheck" class="ErrorMesg">
+            **please Enter User name
+          </label>
+        </div>
+        <div>Mobile</div>
+        <div>
+          <input
+            type="text"
+            id="MobileNoText"
+            placeholder="Enter Mobile"
+            maxlength="10"
+            class="TxtElement"
+          /><br />
+          <label id="MobileCheck" class="ErrorMesg" style="display: none">
+            **please Enter Mobile number
+          </label>
+        </div>
+        <div>Email</div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Email ID"
+            id="EmailText"
+            maxlength="50"
+            class="TxtElement"
+          /><br />
+          <label id="EmailCheck" class="ErrorMesg" style="display: none">
+            **please Enter Email ID
+          </label>
+        </div>
+        <div style="display: flex; justify-content: center">
+          <input
+            type="button"
+            class="SubmitButn"
+            id="submitbtn"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="MaskData_Container"
+      class="CallbackMaskContainer"
+      style="display: none"
+    >
+      <div id="MaskPanel_Container">
+        <span class="MaskContainer_Close" onclick="MaskModelClose()">X</span>
+        <div id="MessageContainer">
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Latitude"
+              class="TxtElement MaskTxt"
+              id="latitudeTxt"
+              maxlength="12"
+              onkeyup="ValidateLatitude();"
+            />
+            <label id="lblLat" class="ErrorMesg"></label>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Longitude"
+              class="TxtElement MaskTxt"
+              id="longitudeTxt"
+              maxlength="13"
+              onkeyup="ValidateLongitude();"
+            />
+            <label id="lblLong" class="ErrorMesg"></label>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter Place"
+              class="TxtElement MaskTxt"
+              id="MaskPlacetxt"
+              maxlength="40"
+            />
+            <label id="lblPlace" class="ErrorMesg"></label>
+          </div>
+          <div>
+            <input
+              type="button"
+              id="MaskSubmitbutn"
+              value="submit"
+              class="SubmitButn"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </form> -->
+  </body>
+  <script src="Scripts/jquery-3.7.0.min.js"></script>
+  <script src="Scripts/index.js"></script>
+</html>
