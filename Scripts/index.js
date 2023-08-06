@@ -4,6 +4,11 @@ $(document).ready(function () {
       var value = $(this).val();
       $(this).val(value.substr(0, value.length - 1));
     }
+    else 
+    {
+       var value = $(this).val();
+        $(this).val(value);
+    }
   });
   $('#NameText,#MaskPlacetxt').keyup(function (e) {
     if (
