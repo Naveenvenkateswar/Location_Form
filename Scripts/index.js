@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //$('#MobileNoText').keyup(function (event) {
   var test = document.getElementById('MobileNoText');
-        test.addEventListener('keyup', function(e) {
+        test.addEventListener('keyup', function(event) {
     if (isNaN(String.fromCharCode(event.which))) {
       var value = $(this).val();
       $(this).val(value.substr(0, value.length - 1));
