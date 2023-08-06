@@ -1,12 +1,11 @@
 $(document).ready(function () {
-  $('#MobileNoText').keypress(function (e) {
-    if ((e.which >= 48 && e.which <= 57) || e.which == 127) {
-      return true;
-    } else {
-      return false;
+  $('#MobileNoText').keyup(function (event) {
+    if (isNaN(String.fromCharCode(event.which))) {
+      var value = $(this).val();
+      $(this).val(value.substr(0, value.length - 1));
     }
   });
-  $('#NameText,#MaskPlacetxt').keypress(function (e) {
+  $('#NameText,#MaskPlacetxt').keyup(function (e) {
     if (
       (e.which >= 65 && e.which <= 90) ||
       (e.which >= 97 && e.which <= 122) ||
@@ -14,7 +13,17 @@ $(document).ready(function () {
     ) {
       return true;
     } else {
-      return false;
+      var value = $(this).val();
+      $(this).val(value.substr(0, value.length - 1));
+    }
+  });
+  $('#latitudeTxt,#longitudeTxt').keyup(function (event) {
+    if (
+      (isNaN(String.fromCharCode(event.which)) && event.which != 190) ||
+      event.which == 32
+    ) {
+      var value = $(this).val();
+      $(this).val(value.substr(0, value.length - 1));
     }
   });
 
@@ -54,7 +63,7 @@ $(document).ready(function () {
   }
   function ValidateMobile() {
     var mobNum = document.getElementById('MobileNoText');
-    //var filter = /^\d*(?:\.\d{1,2})?$/; //[6-9]{1}
+    //var filter = /^\d*(?:\.\d{1,2})?$/; //[a-z]{1}
     var filter = /^([6-9]{1})+([0-9]{9})?$/; //[6-9]{1}
     // alert(mobNum.value.length);
     if (mobNum.value == '') {
