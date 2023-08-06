@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $('#MobileNoText').keyup(function (event) {
+    alert(isNaN(String.fromCharCode(event.which)));
     if (isNaN(String.fromCharCode(event.which))) {
       var value = $(this).val();
       $(this).val(value.substr(0, value.length - 1));
