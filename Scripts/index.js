@@ -1,5 +1,33 @@
+$(document).on('input', ".NameJs" , function()
+{
+    var NameVal = this.value.replace(/[^a-zA-Z ]/g, '').toUpperCase();
+    $("#"+this.id).val("")
+    $("#"+this.id).val(NameVal); 
+    if(this.maxLength == "2147483647")
+    if (this.value.length > 25) this.value = this.value.slice(0, 25);
+    else
+        if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);
+});
+$(document).on('input', ".NumberJs" , function() 
+{
+    var NumVal = this.value.replace(/[^0-9]/g, '');
+    $("#"+this.id).val("")
+    $("#"+this.id).val(NumVal);
+    if(this.maxLength == "2147483647")
+        if (this.value.length > 10) this.value = this.value.slice(0, 10);
+    else
+        if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);
+});
+
+//$(document).blur('input', ".NumberJs" , function() 
+$(".NumberJs").blur('input', function (event) 
+{
+    var NumVal = this.value.replace(/[^0-9]/g, '');
+    $("#"+this.id).val("")
+    $("#"+this.id).val(NumVal);
+});
 $(document).ready(function () {
-  $('#MobileNoText').keyup(function (event) {
+  /*$('#MobileNoText').keyup(function (event) {
     if (isNaN(String.fromCharCode(event.which))) {
       var value = $(this).val();
       $(this).val(value.substr(0, value.length - 1));
@@ -17,6 +45,7 @@ $(document).ready(function () {
       $(this).val(value.substr(0, value.length - 1));
     }
   });
+  /*
   $('#latitudeTxt,#longitudeTxt').keyup(function (event) {
     if (
       (isNaN(String.fromCharCode(event.which)) && event.which != 190) ||
