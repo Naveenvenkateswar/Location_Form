@@ -26,6 +26,12 @@ $(".NumberJs").blur('input', function (event)
     $("#"+this.id).val("")
     $("#"+this.id).val(NumVal);
 });
+$("#latitudeTxt,#longitudeTxt").blur('input', function (event) 
+{
+    var NumVal = this.value.replace(/[^0-9]\./g, '');
+    $("#"+this.id).val("")
+    $("#"+this.id).val(NumVal);
+});
 $(document).ready(function () {
   /*$('#MobileNoText').keyup(function (event) {
     if (isNaN(String.fromCharCode(event.which))) {
@@ -45,7 +51,7 @@ $(document).ready(function () {
       $(this).val(value.substr(0, value.length - 1));
     }
   });
-  */
+  
   $('#latitudeTxt,#longitudeTxt').keyup(function (event) {
     if (
       (isNaN(String.fromCharCode(event.which)) && event.which != 190) ||
@@ -55,7 +61,7 @@ $(document).ready(function () {
       $(this).val(value.substr(0, value.length - 1));
     }
   });
-
+*/
   // Validate Username
   $('#usercheck').hide();
   let usernameError = true;
