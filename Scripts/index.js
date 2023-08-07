@@ -45,7 +45,7 @@ $(document).ready(function () {
       $(this).val(value.substr(0, value.length - 1));
     }
   });
-  /*
+  */
   $('#latitudeTxt,#longitudeTxt').keyup(function (event) {
     if (
       (isNaN(String.fromCharCode(event.which)) && event.which != 190) ||
