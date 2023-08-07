@@ -18,9 +18,14 @@ $(document).on('input', ".NumberJs" , function()
     else
         if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);
 });
-
+$(document).on('input', ".LanLotide" , function() 
+{
+    var NumVal = this.value.replace(/[^0-9]\.-+/g, '');
+    $("#"+this.id).val("")
+    $("#"+this.id).val(NumVal);
+});
 //$(document).blur('input', ".NumberJs" , function() 
-$(".NumberJs").blur('input', function (event) 
+/*$(".NumberJs").blur('input', function (event) 
 {
     var NumVal = this.value.replace(/[^0-9]/g, '');
     $("#"+this.id).val("")
@@ -32,6 +37,7 @@ $("#latitudeTxt,#longitudeTxt").blur('input', function (event)
     $("#"+this.id).val("")
     $("#"+this.id).val(NumVal);
 });
+*/
 $(document).ready(function () {
   /*$('#MobileNoText').keyup(function (event) {
     if (isNaN(String.fromCharCode(event.which))) {
