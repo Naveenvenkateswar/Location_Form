@@ -20,7 +20,7 @@ $(document).on('input', ".NumberJs" , function()
 });
 $(document).on('input', ".LanLotide" , function() 
 {
-    var NumVal = this.value.replace(/[^0-9]\.-+/g, '');
+    var NumVal = this.value.replace(/[^0-9] .-+/g, '');
     $("#"+this.id).val("")
     $("#"+this.id).val(NumVal);
 });
